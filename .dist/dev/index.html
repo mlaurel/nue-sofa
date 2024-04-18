@@ -1,0 +1,386 @@
+<!doctype html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<title>The gnarliest sofas in the world &#x2022; The Sofa Company</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="We have an unique collection of couches reserved for the brave.">
+<link rel="shortcut icon" type="image/svg+xml" src="/img/sofa.svg">
+<style href="/global/burger-menu.css">
+/* A shared CSS file. Hard linked from the @base folder */
+
+.burger {
+  background-image: url(/img/menu.svg);
+  background-size: cover;
+  margin-left: auto;
+  height: 1.5em;
+  width: 1.5em;
+  display: none;
+}
+
+dialog {
+  box-shadow: 0 0 0 1000em #0009;
+  scroll-margin-top: 1em;
+  offset-distance: 1em;
+  left: inherit;
+  width: 250px;
+  right: 1em;
+  z-index: 1;
+  top: 1em;
+
+  /* toggle visibility */
+  display: none;
+  &:target { display: block }
+
+  /* close button */
+  > a {
+    position: absolute;
+    top: .15em;
+    right: .4em;
+    font-size: 2em;
+    font-weight: 200;
+    line-height: 0;
+  }
+
+  img { max-width: 6em; }
+
+  nav a {
+    display: block;
+    width: 100%;
+    padding: .5em 0 1em;
+  }
+
+  nav { margin-top: 1em }
+}
+
+</style>
+<style href="/global/button.css">
+/* A shared CSS file. Hard linked from the @base folder */
+
+button, [role="button"] {
+  background-color: #333;
+  border-radius: .5em;
+  padding: .7em 1.4em;
+  display: inline-block;
+  text-align: center;
+  font-weight: 550;
+  cursor: pointer;
+  color: #fff;
+  border: 0;
+
+  /* states */
+  &:hover { background-color: #000 }
+  &:active { transform: scale(.98) }
+
+  &.secondary {
+    box-shadow: 0 0 0 1px #eee;
+    background-color: #fff;
+    color: inherit;
+
+    &:hover {
+      box-shadow: 0 0 0 1px #ddd;
+      background-color: #fff;
+    }
+  }
+
+  /* followed by another button */
+  + & { margin-left: .3em; }
+}</style>
+<style href="/global/global.css">
+/* A shared CSS file. Hard linked from the @base folder */
+
+*, *::before, *::after {
+  box-sizing: border-box
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: system-ui;
+  margin: 0;
+}
+
+a {
+  text-decoration: none
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+</style>
+<style href="/global/header-and-footer.css">
+/* A shared CSS file. Hard linked from the @base folder */
+
+nav a {
+  font-size: 90%;
+  font-weight: 500;
+  opacity: .6;
+  color: black;
+  &[active], &:hover { opacity: 1 }
+}
+
+/* global header */
+body > header {
+  &, > * {
+    align-items: center;
+    display: flex;
+    gap: 2em;
+  }
+
+  aside { margin-left: auto }
+
+  @media (max-width: 800px) {
+    .burger { display: inline-block }
+    nav, aside { display: none; }
+  }
+}
+
+/* global footer */
+body > footer {
+  display: flex;
+  gap: 3em;
+
+  > :first-child { flex: .5 }
+
+  aside {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    display: grid;
+    gap: 2em;
+    flex: 1;
+  }
+
+  a {
+    display: block;
+    padding: .5em 0;
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+
+
+</style>
+<style href="/global/sofa-company-design.css">
+@font-face {
+  font-family: oswald;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url(/font/oswald.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: gabarito;
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url(/font/gabarito.woff2) format('woff2');
+}
+
+h1 {
+  font-size: calc(2.5em + 5vw);
+  text-transform: uppercase;
+  letter-spacing: -.04em;
+  font-family: oswald, impact;
+  line-height: 1.1;
+  font-weight: 800;
+  margin: 0;
+}
+
+nav a {
+  color: #111;
+  font-weight: 400;
+
+  &[active] {
+    font-weight: bold
+  }
+}
+
+
+h2 {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+button, [role="button"] {
+  text-transform: uppercase;
+  font-family:oswald, impact;
+  padding: .7em 2em;
+  border-radius: 0;
+  font-weight: 800;
+}
+
+blockquote, h1 + p {
+  font-family: "times new roman";
+  font-size: calc(1.8em + 1.2vw);
+  letter-spacing: -0.04em;
+  color: black;
+  line-height: 1.15;
+}
+
+dialog img {
+  max-width: 100%;
+  margin: 1em 0 -.5em;
+}
+
+/* view transitions */
+::view-transition-old(root) {
+  transform: perspective(800px) rotateX(15deg);
+  transition: .3s;
+}
+
+figure { margin: 0 }
+
+
+/* main layout */
+main {
+  max-width: 1100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+body {
+  padding: 3% 6vw;
+  font-family: gabarito;
+
+  /* centered master navigation */
+  > header {
+    justify-content: space-between;
+    margin-bottom: 3em;
+    font-size: 110%;
+    background-color: white;
+
+    > nav { flex: .35 }
+
+    aside { margin: 0; }
+    > a img { max-height: 2.5em }
+  }
+
+  /* footer with more surrounding whitespace */
+  > footer {
+    margin: 8em 0 4em;
+    font-size: 110%;
+  }
+}
+
+
+</style>
+<style href="/home.css">
+main > img {
+  filter: hue-rotate(295deg);
+}
+
+h1 {
+  margin: 0 auto .5em;
+  font-weight: 300;
+  max-width: 7em;
+
+  em {
+    font-style: normal;
+    font-weight: bold
+  }
+
+  strong {
+    color: #c215ff
+  }
+
+  :last-child {
+    text-decoration: underline dotted #c215ff;
+    text-underline-offset: .15em;
+    font-weight: 450;
+  }
+}
+
+.continue {
+  background: #333 url(/img/arrow-right.svg) 88% 56% no-repeat;
+  background-size: 1.1em;
+  padding-right: 3.5em;
+  font-size: 120%;
+  strong {
+    font-weight: 300;
+  }
+
+}
+
+</style>
+<script src="/@nue/page-router.js" type="module"></script>
+<script src="/@nue/hotreload.js" type="module"></script>
+    
+  </head>
+
+  <body>
+    <header>
+  <a href="/"><img width="209" height="44" alt="The Sofa Company logo" src="/img/logo.webp"></a>
+  <nav>
+    <a href="/sofas/unholy/">Unholy</a><a href="/sofas/demony/">Demony</a><a href="/sofas/sinner/">Sinner</a>
+  </nav>
+
+  <aside>
+    <nav><a href="/about/">About </a></nav>
+    <a href="/buy/" role="button">Buy</a>
+  </aside>
+
+  <a href="#menu" aria-label="Open the menu" class="burger"></a>
+</header>
+    <main>
+  <h1 id="we-make-the-gnarliest-sofas-in-the-world"><a href="#we-make-the-gnarliest-sofas-in-the-world" title="We make the gnarliest sofas in the world"></a>We <em>make</em> the <strong>gnarliest</strong> <em>sofas</em> in the <em>world</em></h1>
+<picture><source src="/img/unholy-small.webp" media="(max-width: 750px)" type="image/webp">
+<source src="/img/unholy.webp" media="(min-width: 750px)" type="image/webp">
+<img src="/img/unholy.webp" alt="The Unholy sofa" loading="lazy"></picture>
+<h2 id="unholy-sofa-in-purple-color"><a href="#unholy-sofa-in-purple-color" title="Unholy sofa in purple color"></a>&quot;Unholy&quot; sofa in purple color</h2><blockquote>
+<p>We create luxurious and elegant pieces of furniture that adds sophistication and creativity to any living space. Crafted from high-quality leather and teak, our sofas offer durability and timeless beauty.</p>
+</blockquote>
+
+<a class="continue" href="/sofas/unholy/" role="button"><strong>Continue to</strong> Unholy</a>
+</main>
+    <footer>
+  <figure>
+    <img src="/img/logo-tall.webp" width="140" height="96" alt="Taller Sofa Company logo">
+  </figure>
+
+  <aside>
+    <nav>
+      <h3>Product</h3>
+      <a href="#">Vision</a><a href="#">Fabrics</a><a href="#">Support</a><a href="#">Refunding</a><a href="#">Taking care</a>
+    </nav><nav>
+      <h3>Resellers</h3>
+      <a href="#">Berlin</a><a href="#">Edinburgh</a><a href="#">Kajaani</a><a href="#">Leipzig</a><a href="#">Reykjavik</a>
+    </nav><nav>
+      <h3>Company</h3>
+      <a href="#">Brand</a><a href="#">About</a><a href="#">Contact</a><a href="#">Privacy Policy</a><a href="#">Terms of service</a>
+    </nav>
+  </aside>
+
+  
+  <dialog id="menu" class="card">
+    <a href="#">&#xd7;</a>
+    <header>
+  <a href="/"><img width="209" height="44" alt="The Sofa Company logo" src="/img/logo.webp"></a>
+  <nav>
+    <a href="/sofas/unholy/">Unholy</a><a href="/sofas/demony/">Demony</a><a href="/sofas/sinner/">Sinner</a>
+  </nav>
+
+  <aside>
+    <nav><a href="/about/">About </a></nav>
+    <a href="/buy/" role="button">Buy</a>
+  </aside>
+
+  <a href="#menu" aria-label="Open the menu" class="burger"></a>
+</header>
+  </dialog>
+</footer>
+  </body>
+
+</html>
